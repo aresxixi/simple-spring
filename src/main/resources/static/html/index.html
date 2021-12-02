@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title</title>
+    <script src="echarts.js"></script>
+    <style>
+
+        body {
+            background: #f0f1f6;
+        }
+
+        .test {
+            background: white;
+            margin: 10px auto;
+            width: 97%;
+            border-radius: 10px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .test1 {
+            width: 95%;
+            height:200px;
+            display: inline-block;
+        }
+
+        .test2 {
+            padding: 10px 20px;
+            text-align: start;
+            font-weight: bold;
+            border-bottom: 1px solid #f0f1f6;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="test">
+    <div class="test2">asdfasdfasdf</div>
+    <div id="main1" class="test1"></div>
+</div>
+<div class="test">
+    <div class="test2">asdfasdfasdf</div>
+    <div id="main2" class="test1"></div>
+</div>
+<div class="test">
+    <div class="test2">asdfasdfasdf</div>
+    <div id="main3" class="test1"></div>
+</div>
+<div class="test">
+    <div class="test2">asdfasdfasdf</div>
+    <div id="main4" class="test1"></div>
+</div>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart1 = echarts.init(document.getElementById('main1'));
+    window.onresize = function() {
+        myChart.resize();
+    };
+    // 指定图表的配置项和数据
+    var option1 = {
+        color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+        // title: {
+        //     text: 'Gradient Stacked Area Chart'
+        // },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        // legend: {
+        //     data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5']
+        // },
+        toolbox: {
+            feature: {
+                // saveAsImage: {}
+            }
+        },
+        grid: {
+            left: '2%',
+            right: '4%',
+            bottom: '3%',
+            top: '10%',
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name: 'Line 1',
+                type: 'line',
+                stack: 'Total',
+                smooth: true,
+                lineStyle: {
+                    width: 0
+                },
+                showSymbol: false,
+                areaStyle: {
+                    opacity: 0.8,
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        {
+                            offset: 0,
+                            color: 'rgba(128, 255, 165)'
+                        },
+                        {
+                            offset: 1,
+                            color: 'rgba(1, 191, 236)'
+                        }
+                    ])
+                },
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [140, 232, 101, 264, 90, 340, 250]
+            },
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option1);
+
+    var myChart2 = echarts.init(document.getElementById('main2'));
+    var option2 = {
+        color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+        // title: {
+        //     text: 'Gradient Stacked Area Chart'
+        // },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        // legend: {
+        //     data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5']
+        // },
+        toolbox: {
+            feature: {
+                // saveAsImage: {}
+            }
+        },
+        grid: {
+            left: '2%',
+            right: '4%',
+            bottom: '3%',
+            top: '10%',
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name: 'Line 2',
+                type: 'line',
+                stack: 'Total',
+                smooth: true,
+                lineStyle: {
+                    width: 0
+                },
+                showSymbol: false,
+                areaStyle: {
+                    opacity: 0.8,
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        {
+                            offset: 0,
+                            color: 'rgba(0, 221, 255)'
+                        },
+                        {
+                            offset: 1,
+                            color: 'rgba(77, 119, 255)'
+                        }
+                    ])
+                },
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [120, 282, 111, 234, 220, 340, 310]
+            },
+        ]
+    };
+    myChart2.setOption(option2);
+    var myChart3 = echarts.init(document.getElementById('main3'));
+    var option3 = {
+        color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+        // title: {
+        //     text: 'Gradient Stacked Area Chart'
+        // },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        // legend: {
+        //     data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5']
+        // },
+        toolbox: {
+            feature: {
+                // saveAsImage: {}
+            }
+        },
+        grid: {
+            left: '2%',
+            right: '4%',
+            bottom: '3%',
+            top: '10%',
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name: 'Line 3',
+                type: 'line',
+                stack: 'Total',
+                smooth: true,
+                lineStyle: {
+                    width: 0
+                },
+                showSymbol: false,
+                areaStyle: {
+                    opacity: 0.8,
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        {
+                            offset: 0,
+                            color: 'rgba(55, 162, 255)'
+                        },
+                        {
+                            offset: 1,
+                            color: 'rgba(116, 21, 219)'
+                        }
+                    ])
+                },
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [320, 132, 201, 334, 190, 130, 220]
+            },
+        ]
+    };
+    myChart3.setOption(option3);
+    var myChart4 = echarts.init(document.getElementById('main4'));
+    var option4 = {
+        color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+        // title: {
+        //     text: 'Gradient Stacked Area Chart'
+        // },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        // legend: {
+        //     data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5']
+        // },
+        toolbox: {
+            feature: {
+                // saveAsImage: {}
+            }
+        },
+        grid: {
+            left: '2%',
+            right: '4%',
+            bottom: '3%',
+            top: '10%',
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name: 'Line 4',
+                type: 'line',
+                stack: 'Total',
+                smooth: true,
+                lineStyle: {
+                    width: 0
+                },
+                showSymbol: false,
+                areaStyle: {
+                    opacity: 0.8,
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        {
+                            offset: 0,
+                            color: 'rgba(255, 0, 135)'
+                        },
+                        {
+                            offset: 1,
+                            color: 'rgba(135, 0, 157)'
+                        }
+                    ])
+                },
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [220, 402, 231, 134, 190, 230, 120]
+            },
+        ]
+    };
+    myChart4.setOption(option4);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+BeanDefinitionRegistry用来存放BeanDefinition的
+
+scanner执行scan，把扫描到的beanDefinition放到BeanDefinitionRegistry里
