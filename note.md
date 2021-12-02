@@ -1,3 +1,6 @@
 BeanDefinitionRegistry用来存放BeanDefinition的
 
 scanner执行scan，把扫描到的beanDefinition放到BeanDefinitionRegistry里
+
+重要步骤
+（1）获取到bean的定义，即BeanDefinition
